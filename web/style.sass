@@ -1,0 +1,90 @@
+$color-primary: #9CD7AC
+$color-on-primary: black
+$color-bg: #0d1121
+$color-elem: #25314d
+$color-fg: white
+$color-fg-dim: #a2b7d7
+
+$font-size: 14px
+
+$max-bar-width: 640px
+
+@font-face
+  font-family: DINish
+  font-weight: normal
+  font-style: normal
+  src: url(/fonts/DINish-Regular.ttf) format(truetype)
+
+@font-face
+  font-family: DINish
+  font-weight: bold
+  font-style: normal
+  src: url(/fonts/DINish-Bold.ttf) format(truetype)
+
+$font-family: DINish
+
+body
+  margin: 0
+  background-color: $color-bg
+  color: $color-fg
+  font-family: $font-family
+  font-size: $font-size
+  display: flex
+  flex-direction: column
+  align-items: center
+
+form
+  width: 100%
+  box-sizing: border-box
+  display: flex
+  flex-direction: row
+  align-items: stretch
+
+  input
+    padding: 9px 12px
+
+    &[type="text"]
+      padding-left: 16px
+      flex: 1
+      background-color: $color-elem
+      color: $color-fg
+      font-family: $font-family
+      font-size: $font-size
+      border: none
+      outline: none
+      &::placeholder
+        color: $color-fg-dim
+    
+    &[type="submit"]
+      padding-right: 16px
+      font-weight: bold
+      text-transform: uppercase
+      background-color: $color-primary
+      color: $color-on-primary
+      border: none
+      cursor: pointer
+
+  @media (min-width: $max-bar-width)
+    width: $max-bar-width
+    padding: 12px
+    input
+      &[type="text"]
+        border-top-left-radius: 30px
+        border-bottom-left-radius: 30px
+      &[type="submit"]
+        border-top-right-radius: 30px
+        border-bottom-right-radius: 30px
+
+
+img
+  max-width: 90%
+  margin-top: 36px
+
+.error
+  font-size: 12px
+  padding: 6px 8px
+  background-color: #53292f
+  
+  @media (max-width: $max-bar-width)
+    align-self: flex-start
+    margin: 12px

@@ -8,3 +8,9 @@ namedBin      = {"main": "regexp2automaton"}.toTable
 
 requires "nim >= 2.2.6"
 requires "fusion"
+
+
+task buildWeb, "build web version":
+  withDir "web":
+    exec "sassc style.sass html/style.css"
+    exec "nim c -o:html/gensvg gensvg.nim"
