@@ -28,10 +28,10 @@
     if (is_resource($process)) {
       fwrite($pipes[0], $expr);
       fclose($pipes[0]);
-      $svg = stream_get_contents($pipes[1]);
+      $result = stream_get_contents($pipes[1]);
       fclose($pipes[1]);
       proc_close($process);
-      echo $svg;
+      echo $result;
     }
   ?>
   
