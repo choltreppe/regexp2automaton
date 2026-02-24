@@ -1,4 +1,4 @@
-$color-primary: #9CD7AC
+$color-primary: white
 $color-on-primary: black
 $color-bg: #0d1121
 $color-elem: #25314d
@@ -39,6 +39,8 @@ form
   display: flex
   flex-direction: row
   align-items: stretch
+  border: 2px $color-primary solid
+  background-color: $color-primary
 
   input
     padding: 9px 12px
@@ -66,14 +68,9 @@ form
 
   @media (min-width: $max-bar-width)
     width: $max-bar-width
-    padding: 12px
-    input
-      &[type="text"]
-        border-top-left-radius: 30px
-        border-bottom-left-radius: 30px
-      &[type="submit"]
-        border-top-right-radius: 30px
-        border-bottom-right-radius: 30px
+    margin: 12px
+    border-radius: 30px
+    overflow: hidden
 
 
 img
